@@ -1,0 +1,43 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.first {
+    background-color: transparent;
+    color: white;
+    min-height: 500px;
+    padding: 0 25%;
+    justify-content: start;
+    align-items: center;
+}
+
+.fixed-photo {
+    background-image: url("../../../assets/Images/Illustration.png");
+    height: 750px;
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 35%;
+}
+
+.second {
+    background-color: white;
+    color: orange;
+    height: 700px;
+    width: -webkit-fill-available;
+    padding: 0 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

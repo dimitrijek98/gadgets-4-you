@@ -1,0 +1,27 @@
+<div class="first-line text-center text-white fixed-photo">
+  <h1>Log in to your account before shopping
+  </h1>
+</div>
+<div class="container center full-width">
+  <h2>Enter your email and password</h2>
+
+  <form>
+    <div class="center">
+      <h3 class="center">Order cost: {{orderCost$ | async}} $</h3>
+    </div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Enter card number" [formControl]="cardNumber" required />
+      <mat-error *ngIf="cardNumber.invalid">{{errorCardNumber()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput [formControl]="cvv" placeholder="Enter cvv code" required>
+      <mat-error *ngIf="cvv.invalid">{{errorCvv()}}</mat-error>
+    </mat-form-field>
+    <div *ngIf="paymentFail$ | async" class="center">
+      <h4 class="alert center">Something went wrong with a payment!</h4>
+    </div>
+    <div class="center">
+      <button mat-raised-button (click)="pay()" color="primary">Pay</button>
+    </div>
+  </form>
+</div>

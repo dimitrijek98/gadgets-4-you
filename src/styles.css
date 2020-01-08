@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    width: 100%;
+    margin: 0%;
+    background: linear-gradient(45deg, rgb(255, 136, 0), rgb(255, 230, 0));
+    background-size: 400% 400%;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.full-width {
+    width: 100%
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-white {
+    color: white
+}
+.product-card {
+    width: 300px;
+    min-height: 200px;
+    background-color: #3f51b5;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }

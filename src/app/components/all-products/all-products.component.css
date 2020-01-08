@@ -1,0 +1,13 @@
+.fixed-photo {
+    background-image: url("../../../assets/Images/online-shop.svg");
+    height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+}
+.first-line {
+    padding: 0 30%;
+    padding-top: 10%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

@@ -1,0 +1,76 @@
+<div  class="full-width">
+    <div class="container first fixed-photo" fxLayout="row" fxLayout.sm="column" fxLayoutWrap fxLayoutGap="6%">
+        <div fxFlex="50%" class="center text-center">
+            <h1>
+                Welcome to the best oneline store.
+            </h1>
+            <h2>
+                One stop place fore all your consumer electronics needs. We garantee you lowest prices and the best
+                shopping experience.
+            </h2>
+            <button mat-raised-button routerLink="Store">Start Shopping!</button>
+        </div>
+    </div>
+    <div *ngIf="isLoggedOut$ | async" class="second">
+        <h1>
+            You are just few steps away from happiness!
+        </h1>
+        <mat-vertical-stepper linear="true" #stepper>
+            <mat-step [stepControl]="firstNameFormGroup">
+                <form [formGroup]="firstNameFormGroup">
+                    <ng-template matStepLabel>Enter your first name.</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="First name" formControlName="firstNameCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button color="accent" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="lastNameFormGroup">
+                <form [formGroup]="lastNameFormGroup">
+                    <ng-template matStepLabel>Now your last name</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="Last name" formControlName="lastNameCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button color="accent" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="emailFormGroup">
+                <form [formGroup]="emailFormGroup">
+                    <ng-template matStepLabel>Fill out your email address</ng-template>
+                    <mat-form-field>
+                        <input matInput placeholder="Email" formControlName="emailCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button color="accent" matStepperPrevious>Back</button>
+                        <button mat-button color="accent" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="passwordFormGroup">
+                <form [formGroup]="passwordFormGroup">
+                    <ng-template matStepLabel>Enter password for the end</ng-template>
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Password" formControlName="passwordCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-button color="accent" matStepperPrevious>Back</button>
+                        <button mat-button color="accent" matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button color="accent" (click)="userRegister()">Register</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="first-line text-center text-white fixed-photo">
+  <h1>Log in to your account before shopping
+  </h1>
+</div>
+<div class="container center full-width">
+  <h2>Enter your email and password</h2>
+
+  <form>
+    <div *ngIf="loginFail$ | async" class="center">
+      <h4 class="alert center">Incorect email or password</h4>
+    </div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Enter your email" [formControl]="email" required />
+      <mat-error *ngIf="email.invalid">{{errorEmail()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input type="password" matInput [formControl]="password" placeholder="Enter your password" required>
+      <mat-error *ngIf="password.invalid">{{errorPassword()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button (click)="userLogin()" color="primary">Log in</button>
+
+  </form>
+</div>

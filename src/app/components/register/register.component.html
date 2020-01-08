@@ -1,0 +1,44 @@
+<div class="first-line text-center text-white fixed-photo">
+    <h1>To been able to shop in our store, first you have to create yout account. Don't worry, account is on the house!
+    </h1>
+</div>
+
+<div class="container full-width">
+    <h1 style="color: black">Enter your account data.</h1>
+    <form>
+        <div *ngIf="registerFail$ | async" class="center">
+            <h4 class="alert center">There is already an user registered with that email</h4>
+        </div>
+        <table class="full-width" cellspacing="2">
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="First Name" [formControl]="firstName" required />
+                        <mat-error *ngIf="firstName.invalid">{{errorFirstName()}}</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Last Name" [formControl]="lastName" required />
+                        <mat-error *ngIf="lastName.invalid">{{errorLastName()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Enter your email" [formControl]="email" required />
+            <mat-error *ngIf="email.invalid">{{errorEmail()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input type="password" matInput [formControl]="password" placeholder="Enter your password" required>
+            <mat-error *ngIf="password.invalid">{{errorPassword()}}</mat-error>
+        </mat-form-field>
+        <div class="to-left full-width">
+            <button [disabled]="!(firstName.valid && lastName.valid && email.valid && password.valid)" mat-raised-button
+                (click)="userRegister()" color="primary">Create Account</button>
+        </div>
+    </form>
+    <div *ngFor="let user of users">
+        <p>{{ user.name }}</p>
+    </div>
+</div>

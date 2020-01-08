@@ -1,0 +1,21 @@
+<div fxLayout="row" class="container" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
+    <mat-card class="product-card" *ngFor="let product of products">
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/Images/productImages/{{product.id}}.jpg" height="300" alt="{{product.name}}">
+    <mat-card-content>
+      <h4>
+        Price: {{product.price}} $
+      </h4>
+      <h4>Description:</h4>
+      <p>
+        {{product.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="accent" (click)="addProductToCart(product)" mat-button>Add to chart </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

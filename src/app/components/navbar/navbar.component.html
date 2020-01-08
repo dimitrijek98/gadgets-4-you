@@ -1,0 +1,29 @@
+<mat-toolbar class="navbar">
+        <a mat-button routerLink="">
+                <h2>WebStore</h2>
+            </a>
+    <div>
+
+        <a mat-button routerLink="">
+            <h4>Home</h4>
+        </a>
+        <a mat-button routerLink="Store">
+            <h4>Store</h4>
+        </a>
+
+        <span *ngIf="isLoggedOut$ | async">
+            <a mat-flat-button color="accent" routerLink="Register">Register</a>
+            <a mat-flat-button class="text-black" routerLink="Login">Log in</a>
+        </span>
+
+        <a mat-flat-button color="primary" [matMenuTriggerFor]="menu" *ngIf="isLoggedIn$ | async">
+            <mat-icon aria-hidden="false" style="margin-right: 10px" aria-label="Account icon">account_circle</mat-icon>{{userName$ | async}}
+        </a>
+        <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="Cart"><mat-icon>shopping_cart</mat-icon> Cart</button>
+            <button mat-menu-item (click)="logout()"><mat-icon>exit_to_app</mat-icon> Log Out</button>
+        </mat-menu>
+
+
+    </div>
+</mat-toolbar>
