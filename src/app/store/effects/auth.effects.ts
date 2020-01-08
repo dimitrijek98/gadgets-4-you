@@ -51,7 +51,6 @@ export class AuthEffects {
     ),
     map(user => {
       if (user) {
-        console.log(user);
         return new RegisterSuccess(user);
       } else {
         return new RegisterFail();

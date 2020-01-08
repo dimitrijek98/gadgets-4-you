@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
   userLogin() {
     const email = this.email.value;
     const password = this.password.value;
-    console.log(email, password);
     this.store.dispatch(new Login(email, password));
   }
 }

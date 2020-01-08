@@ -14,7 +14,7 @@
 .first {
     background-color: transparent;
     color: white;
-    min-height: 500px;
+    min-height: 60vh;
     padding: 0 25%;
     justify-content: start;
     align-items: center;
@@ -22,7 +22,7 @@
 
 .fixed-photo {
     background-image: url("../../../assets/Images/Illustration.png");
-    height: 750px;
+    height: 30vh;
     background-attachment: fixed;
     background-position: right;
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@
     background-color: white;
     color: orange;
     height: 700px;
-    width: -webkit-fill-available;
+    /*width: -webkit-fill-available;*/
     padding: 0 25%;
     text-align: center;
     display: flex;

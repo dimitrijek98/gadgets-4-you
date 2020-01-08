@@ -27,7 +27,7 @@
 
 .fixed-photo {
     background-image: url("../../../assets/Images/desk.png");
-    height: 500px;
+    height: 20vh;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;

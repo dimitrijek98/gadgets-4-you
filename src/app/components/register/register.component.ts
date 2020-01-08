@@ -47,10 +47,9 @@ export class RegisterComponent implements OnInit {
   }
 
   userRegister() {
-    console.log(this.email.value, this.password.value, this.firstName.value, this.lastName.value);
     const user: User = {
       email: this.email.value,
-      password: this.password.value,
+      password: btoa(this.password.value),
       firstName: this.firstName.value,
       lastName: this.lastName.value
     };

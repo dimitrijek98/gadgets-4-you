@@ -19,10 +19,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loginUser(email: string, password: string): Observable<any> {
-    return this.http.post(`${baseAPIUrl}Login`, JSON.stringify({ email, password}), httpOptions);
+    const codecPass = btoa(password);
+    return this.http.post(`${baseAPIUrl}login`, JSON.stringify({ email, password: codecPass}), httpOptions);
   }
 
   registerUser(user: User): Observable<any> {
-    return this.http.post(`${baseAPIUrl}Register`, JSON.stringify(user), httpOptions);
+    return this.http.post(`${baseAPIUrl}register`, JSON.stringify(user), httpOptions);
   }
 }
