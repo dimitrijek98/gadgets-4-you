@@ -1,6 +1,6 @@
 <mat-toolbar class="navbar">
         <a mat-button routerLink="">
-                <h2>WebStore</h2>
+                <h1>WebStore</h1>
             </a>
     <div>
 
@@ -9,6 +9,9 @@
         </a>
         <a mat-button routerLink="Store">
             <h4>Store</h4>
+        </a>
+        <a mat-button routerLink="Profile">
+            <h4>Profile</h4>
         </a>
 
         <span *ngIf="isLoggedOut$ | async">

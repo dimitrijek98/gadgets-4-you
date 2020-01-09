@@ -28,6 +28,8 @@ import { CardEffects } from './store/effects/card.effects';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CartGridComponent,
     CheckoutComponent,
     PaymentSuccessComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +54,11 @@ import { FooterComponent } from './components/footer/footer.component';
     MaterialModule,
     HttpClientModule,
     AuthGuard,
-    StoreModule.forRoot(rootReducer, { metaReducers }),
+    StoreModule.forRoot(rootReducer, {metaReducers}),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([AuthEffects, ProductEffects, CartEffects, CardEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    MatSelectModule,
 
   ],
   providers: [ProductService, UserService],

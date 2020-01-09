@@ -26,4 +26,7 @@ export class UserService {
   registerUser(user: User): Observable<any> {
     return this.http.post(`${baseAPIUrl}register`, JSON.stringify(user), httpOptions);
   }
+  updateUser(user: User): Observable<any> {
+    return this.http.post(`${baseAPIUrl}update`, JSON.stringify(user), httpOptions);
+  }
 }

@@ -23,6 +23,26 @@ export const userName = createSelector(
     user => user.user ? user.user.firstName : null
 );
 
+export const lastName = createSelector(
+    selectAuthState,
+    user => user.user ? user.user.lastName : null
+);
+
+export const email = createSelector(
+    selectAuthState,
+    user => user.user ? user.user.email : null
+);
+
+export const phone = createSelector(
+    selectAuthState,
+    user => user.user ? user.user.phone : null
+);
+
+export const id = createSelector(
+    selectAuthState,
+    user => user.user ? user.user.id : null
+);
+
 export const registerFail = createSelector(
     selectAuthState,
     user => user.registerFail

@@ -17,8 +17,7 @@ const initialAuthState: AuthState = {
 
 export default function authReducer(state: AuthState = initialAuthState, action: AuthActions): AuthState {
     switch (action.type) {
-        case AuthActionTypes.LoginSuccessAction:
-            {
+        case AuthActionTypes.LoginSuccessAction: {
                 return {
                     registerFail: false,
                     loginFail: false,
@@ -48,6 +47,17 @@ export default function authReducer(state: AuthState = initialAuthState, action:
                     loginFail: false,
                     loggedIn: false,
                     user: undefined
+                };
+            }
+        case AuthActionTypes.UpdateFailAction: {
+                return initialAuthState;
+            }
+        case AuthActionTypes.UpdateSuccessAction: {
+                return {
+                    registerFail: true,
+                    loginFail: false,
+                    loggedIn: true,
+                    user: action.user
                 };
             }
         case AuthActionTypes.LogoutAction: {
