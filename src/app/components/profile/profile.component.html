@@ -1,5 +1,5 @@
 <div class="first-line text-center text-white fixed-photo">
-  <h1>Profile
+  <h1>Set up your phone model in order to browse store
   </h1>
 </div>
 <div class="container center full-width">
@@ -30,7 +30,7 @@
       <mat-label>Phone Model</mat-label>
       <mat-select [formControl]="phone">
         <mat-option  *ngFor="let p of phones$ | async" [value]="p">
-          {{p}}
+          {{p.model}}
         </mat-option>
       </mat-select>
       <mat-error *ngIf="phone.invalid">{{errorPhone()}}</mat-error>

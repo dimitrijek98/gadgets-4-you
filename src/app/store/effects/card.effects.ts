@@ -15,7 +15,6 @@ export class CardEffects {
       this.cardService.pay(action.card)
     ),
     map(payment => {
-      console.log(payment);
       if (payment) {
         return new PaymentSuccess();
       } else {

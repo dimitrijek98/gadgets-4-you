@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/reducers';
 import { RemoveProduct, EmptyCart } from 'src/app/store/actions/cart.actions';
 import { Router } from '@angular/router';
+import {photoUrl} from 'src/app/Config';
 
 @Component({
   selector: 'app-cart-grid',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class CartGridComponent implements OnInit {
 
+  photoUrl = photoUrl;
   @Input()
   products: Product[];
 

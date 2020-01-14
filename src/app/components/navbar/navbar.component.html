@@ -10,9 +10,6 @@
         <a mat-button routerLink="Store">
             <h4>Store</h4>
         </a>
-        <a mat-button routerLink="Profile">
-            <h4>Profile</h4>
-        </a>
 
         <span *ngIf="isLoggedOut$ | async">
             <a mat-flat-button color="accent" routerLink="Register">Register</a>
@@ -23,6 +20,7 @@
             <mat-icon aria-hidden="false" style="margin-right: 10px" aria-label="Account icon">account_circle</mat-icon>{{userName$ | async}}
         </a>
         <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item routerLink="Profile"><mat-icon>account_circles</mat-icon>Profile</button>
             <button mat-menu-item routerLink="Cart"><mat-icon>shopping_cart</mat-icon> Cart</button>
             <button mat-menu-item (click)="logout()"><mat-icon>exit_to_app</mat-icon> Log Out</button>
         </mat-menu>

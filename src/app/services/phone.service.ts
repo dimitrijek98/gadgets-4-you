@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {baseAPIUrl} from '../Config';
+import {Phone} from '../models/Phone';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -18,8 +19,8 @@ export class PhoneService {
     constructor(private http: HttpClient) {
     }
 
-    getPhoneModels(): Observable<string[]> {
-        return this.http.get<string[]>(`${baseAPIUrl}phone-models`, {
+    getPhoneModels(): Observable<Phone[]> {
+        return this.http.get<Phone[]>(`${baseAPIUrl}phone-models`, {
             headers: httpOptions.headers,
         });
     }

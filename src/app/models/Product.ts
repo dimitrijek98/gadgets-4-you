@@ -1,7 +1,8 @@
 export class Product {
-    id: number;
+    id?: number;
     name: string;
     price: number;
+    image: string;
     connector: string;
-    category: string;
+    // category: string;
 }

@@ -14,10 +14,10 @@ export const selectAllProducts = createSelector(
     fromProducts.selectAll
 );
 
-export const selectCategory = (categoryName: string) => createSelector(
-    selectAllProducts,
-    productsState => productsState.filter(product => product.category === categoryName)
-);
+// export const selectCategory = (categoryName: string) => createSelector(
+//     selectAllProducts,
+//     productsState => productsState.filter(product => product.category === categoryName)
+// );
 
 export const allProductsLoaded = createSelector(
     selectProductsState,

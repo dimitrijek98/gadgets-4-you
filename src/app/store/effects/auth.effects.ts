@@ -17,6 +17,7 @@ import {tap, map, mergeMap, switchMap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {defer, of} from 'rxjs';
 import {UserService} from 'src/app/services/user.service';
+import {Phone} from "../../models/Phone";
 
 @Injectable()
 export class AuthEffects {
@@ -78,7 +79,16 @@ export class AuthEffects {
         ),
         map(user => {
             if (user) {
-                return new UpdateSuccess(user);
+                const phone = new Phone();
+                phone.brand = user.phoneBrand;
+                phone.model = user.phoneModel;
+                const formattedUser = {
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                    phone
+                };
+                return new UpdateSuccess(formattedUser);
             } else {
                 return new UpdateFail();
             }
@@ -99,7 +109,7 @@ export class AuthEffects {
         ofType<RegisterSuccess>(AuthActionTypes.RegisterSuccessAction),
         tap((action) => {
             localStorage.setItem('user', JSON.stringify(action.user));
-            this.router.navigateByUrl('').then(r => {});
+            this.router.navigateByUrl('Profile').then(r => {});
         })
     );
 

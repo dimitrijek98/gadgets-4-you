@@ -38,6 +38,11 @@ export const phone = createSelector(
     user => user.user ? user.user.phone : null
 );
 
+export const notSetUpPhone = createSelector(
+    selectAuthState,
+    user => user.user ? !user.user.phone : true
+);
+
 export const id = createSelector(
     selectAuthState,
     user => user.user ? user.user.id : null

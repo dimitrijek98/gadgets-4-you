@@ -12,7 +12,7 @@ export class CardService {
   constructor(private http: HttpClient) { }
 
   pay(card: Card): Observable<any> {
-    return this.http.put(`${baseAPIUrl}Pay`, card);
+    return this.http.post(`${baseAPIUrl}pay`, card);
   }
 
 }

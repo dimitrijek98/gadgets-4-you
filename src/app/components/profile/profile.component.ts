@@ -7,6 +7,7 @@ import {userName, lastName, email, phone, id} from '../../store/selectors/auth.s
 import {User} from '../../models/User';
 import {Update} from '../../store/actions/auth.actions';
 import {PhoneService} from '../../services/phone.service';
+import {Phone} from '../../models/Phone';
 
 @Component({
   selector: 'app-profile',
@@ -17,9 +18,9 @@ export class ProfileComponent implements OnInit {
   userName$: Observable<string>;
   lastName$: Observable<string>;
   email$: Observable<string>;
-  phone$: Observable<string>;
+  phone$: Observable<Phone>;
   id$: Observable<number>;
-  phones$: Observable<string[]>;
+  phones$: Observable<Phone[]>;
 
   email = new FormControl('', [Validators.required, Validators.email]);
   firstName = new FormControl('', [Validators.required]);

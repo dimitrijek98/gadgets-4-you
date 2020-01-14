@@ -1,30 +1,37 @@
-import { Action } from '@ngrx/store';
-import { Product } from 'src/app/models/Product';
+import {Action} from '@ngrx/store';
+import {Product} from 'src/app/models/Product';
+import { Phone } from 'src/app/models/Phone';
 
 export enum ProductActionTypes {
-  RequestProduct = '[Product Details] Request Product',
-  LoadProduct = '[Request Product API] Load Product',
-  RequestAllProducts = '[Store Page] Request All Products',
-  LoadAllProducts = '[Request All Products API] Load All Products',
+    RequestProduct = '[Product Details] Request Product',
+    LoadProduct = '[Request Product API] Load Product',
+    RequestAllProducts = '[Store Page] Request All Products',
+    LoadAllProducts = '[Request All Products API] Load All Products',
 
 }
 
 export class RequestProduct implements Action {
-  readonly type = ProductActionTypes.RequestProduct;
+    readonly type = ProductActionTypes.RequestProduct;
 }
 
 export class LoadProduct implements Action {
-  readonly type = ProductActionTypes.LoadProduct;
-  constructor(public products: Product) { }
+    readonly type = ProductActionTypes.LoadProduct;
+
+    constructor(public products: Product) {
+    }
 }
 
 export class RequestAllProducts implements Action {
-  readonly type = ProductActionTypes.RequestAllProducts;
+    readonly type = ProductActionTypes.RequestAllProducts;
+    constructor(public phoneType: Phone) {
+    }
 }
 
 export class LoadAllProducts implements Action {
-  readonly type = ProductActionTypes.LoadAllProducts;
-  constructor(public products: Product[]) { }
+    readonly type = ProductActionTypes.LoadAllProducts;
+
+    constructor(public products: Product[]) {
+    }
 }
 
 
