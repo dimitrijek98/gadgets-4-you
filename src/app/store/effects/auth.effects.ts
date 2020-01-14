@@ -100,7 +100,7 @@ export class AuthEffects {
         ofType<UpdateSuccess>(AuthActionTypes.UpdateSuccessAction),
         tap((action) => {
             localStorage.setItem('user', JSON.stringify(action.user));
-            this.router.navigateByUrl('').then(r => {});
+            this.router.navigateByUrl('Store').then(r => {});
         })
     );
 

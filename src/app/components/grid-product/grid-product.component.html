@@ -1,7 +1,7 @@
 <div fxLayout="row" class="container" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="center">
     <div class="info" *ngIf="notSetUpPhone$ | async">
         <h1>You have to set up your phone model in order to browse store</h1>
-        <button color="primary" style="height: 50px; width: 200px" routerLink="Profile" mat-flat-button>Go to profile</button>
+        <button color="primary" style="height: 50px; width: 200px" (click)="this.router.navigateByUrl('Profile')" mat-flat-button>Go to profile</button>
     </div>
     <mat-card class="product-card" *ngFor="let product of products">
     <mat-card-header>

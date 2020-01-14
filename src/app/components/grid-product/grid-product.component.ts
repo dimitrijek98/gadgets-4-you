@@ -6,6 +6,7 @@ import {AddProduct} from 'src/app/store/actions/cart.actions';
 import {photoUrl} from 'src/app/Config';
 import { notSetUpPhone} from '../../store/selectors/auth.selector';
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-grid-product',
@@ -19,7 +20,7 @@ export class GridProductComponent implements OnInit {
     @Input()
     products: Product[];
 
-    constructor(private store: Store<AppState>) {
+    constructor(private router: Router, private store: Store<AppState>) {
     }
 
     ngOnInit() {
